@@ -1,0 +1,13 @@
+     1	mod catr_cli;
+
+     2	use std::process;
+
+     3	use catr_cli::CatrCli;
+     4	use clap::Parser;
+
+     5	fn main() {
+     6	    let arg = CatrCli::parse();
+     7	    if let Err(_) = arg.print_content() {
+     8	        process::exit(1);
+     9	    }
+    10	}
